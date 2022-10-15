@@ -11,3 +11,18 @@
 ```bash
 nest g resource users
 ```
+
+
+# app.module
+
+```ts
+imports: [
+    TypeOrmModule.forRoot({
+      type: 'sqlite', // nome do db
+      database: 'db.sqlite', // credenciais de acesso
+      entities: ['dist/**/*.entity.js'], //caminho onde sera criada as entidades
+      synchronize: true, // se (True), cria automaticamente as schemas
+    }),
+    UsersModule,
+  ],
+  ```

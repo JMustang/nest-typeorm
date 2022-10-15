@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "db",
+            "group": "db",
+            "database": "\\\\wsl$\\Ubuntu-20.04\\home\\coder\\www\\Development\\NODEJS\\nest-typeorm\\db.sqlite"
+        }
+    ]
+}
