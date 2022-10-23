@@ -9,7 +9,8 @@
 # nest CLI
 
 ```bash
-nest g resource users
+# cria um CRUD de nome 'users'
+nest g resource users 
 ```
 
 
