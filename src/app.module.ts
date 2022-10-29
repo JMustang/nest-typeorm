@@ -10,7 +10,7 @@ import { UsersModule } from './users/users.module';
       type: 'sqlite',
       database: 'db.sqlite',
       entities: ['dist/**/*.entity.js'],
-      synchronize: true,
+      // synchronize: true,
     }),
     UsersModule,
   ],

@@ -12,22 +12,27 @@ export class UsersService {
   ) {}
 
   create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+    const newUser = this.usersRepository.create(createUserDto);
+
+    return this.usersRepository.save(newUser);
   }
 
   findAll() {
-    return `This action returns all users`;
+    return this.usersRepository.find(); // SELECT * FROM users;
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} user`;
+    return this.usersRepository.findOneBy({ id }); // SELECT * FROM users WHERE id = id;
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: number, updateUserDto: UpdateUserDto) {
+    const user = await this.findOne(id);
+
+    return this.usersRepository.save({ ...user, ...updateUserDto });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(id: number) {
+    const user = await this.findOne(id);
+    return this.usersRepository.remove(user);
   }
 }
